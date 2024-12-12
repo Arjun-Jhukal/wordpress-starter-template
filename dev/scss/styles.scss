@@ -1,4 +1,5 @@
 @use "./globals/font";
-@use "./globals/global";
-@use "./globals/global.media";
+@use "./globals/global" as global;
+@use "./globals/global.media" as globalMedia;
 @use "./mixins/mixins";
+@use "./components/landing-page/page-banner";

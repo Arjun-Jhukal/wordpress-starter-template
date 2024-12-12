@@ -1,0 +1,28 @@
+@use "../../globals/global";
+
+.page-banner {
+	.pb-content {
+		max-width: 784px;
+		margin: 0 auto;
+		text-align: center;
+
+		.over-title,
+		h1,
+		p,
+		a {
+			color: global.$white;
+		}
+
+		.over-title {
+			display: block;
+			margin-bottom: 12px;
+		}
+		h1 {
+			max-width: 632px;
+			margin: 0 auto 20px;
+		}
+		p + a {
+			margin-top: 28px;
+		}
+	}
+}

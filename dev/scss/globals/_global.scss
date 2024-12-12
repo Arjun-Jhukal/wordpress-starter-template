@@ -6,3 +6,105 @@ $berlingske-serif-700: "berlingske-serif-700";
 $berlingske-serif-700-italic: "berlingske-serif-700-italic";
 $berlingske-serif-800: "berlingske-serif-800";
 $berlingske-serif-900: "berlingske-serif-900";
+$inter: "Inter", sans-serif;
+
+$primary: #235d41;
+$black: #1c1d1d;
+$primaryLight: #6e8f15;
+$white: #fff;
+$body: #f2efe7;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $inter;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	span {
+		color: $primaryLight;
+	}
+}
+
+h1 {
+	font-size: 32px;
+	line-height: 40px;
+	letter-spacing: -0.02em;
+	span {
+		font-style: italic;
+	}
+}
+
+h1,
+h4 {
+	font-family: $berlingske-serif-700;
+}
+
+h2 {
+	font-family: $berlingske-serif-400;
+
+	span {
+		font-family: $berlingske-serif-800;
+	}
+}
+
+h3 {
+	font-family: $berlingske-serif-600;
+}
+
+p,
+a,
+span,
+small,
+strong {
+	line-height: 24px;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	transition: all 0.3s ease-in-out;
+}
+
+small,
+.sm-text,
+.over-title {
+	font-size: 12px;
+	line-height: 19px;
+}
+
+.over-title {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.section-padding-y {
+	padding: 48px 0;
+}
+
+.section-gap {
+	margin-bottom: 48px;
+}
+
+.tpfl-btn {
+	&.tpfl-btn-filled {
+		background-color: $primary;
+		color: $white;
+		border-radius: 4px;
+		padding: 12px 36px;
+
+		&:hover {
+			background-color: $primaryLight;
+		}
+	}
+}

@@ -1,0 +1,55 @@
+@use "./global";
+@media (min-width: 1200px) {
+	body {
+		font-size: 16px;
+	}
+
+	h1 {
+		font-size: 56px;
+		line-height: 64px;
+	}
+
+	h2 {
+		font-size: 32px;
+		line-height: 38px;
+	}
+
+	h3 {
+		font-size: 24px;
+		line-height: 28px;
+	}
+
+	h4 {
+		font-size: 18px;
+		line-height: 26px;
+	}
+
+	p,
+	a,
+	span,
+	small,
+	strong {
+		line-height: 24px;
+	}
+
+	small,
+	.sm-text,
+	.over-title {
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	.section-gap {
+		margin-bottom: 96px;
+	}
+
+	.section-padding-y {
+		padding: 96px 0;
+	}
+}
+
+@media (min-width: 1440px) {
+	.container {
+		max-width: 1280px;
+	}
+}

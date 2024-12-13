@@ -18,4 +18,33 @@
 </head>
 
 <body>
+
+  <?php
+$header_logo = get_field('header_logo', 'option');
+$header_cta = get_field('header_cta', 'option');
+?>
+  <header class="header">
+    <div class="container">
+      <div class="header-content-box d-flex justify-content-between align-items-center">
+        <a href="<?php echo home_url();?>" class="header-logo">
+          <img src="<?php echo esc_url($header_logo['url'])?>" alt="<?php echo esc_attr($header_logo['alt'])?>"
+            class="img-fluid">
+        </a>
+        <div class="primary-menu-wrapper">
+          <ul class="primary-menu">
+            <li>
+              <a href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+        <?php if($header_cta && $header_cta['url']):?>
+        <div class="header-cta text-end">
+          <a href="<?php echo esc_url($header_cta['url'])?>"
+            target="<?php echo !empty($header_cta['target'])?$header_cta['target']:'_self'?>"
+            class="tpfl-btn tpfl-btn-filled"><?php echo esc_html($header_cta['title'])?></a>
+        </div>
+        <?php endif;?>
+      </div>
+    </div>
+  </header>
   <main>

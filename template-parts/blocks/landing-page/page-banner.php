@@ -5,7 +5,7 @@ $brief=get_field("pb_brief");
 $cta=get_field("page_banner_cta");
 $image=get_field("pb_background_image");
 ?>
-<section class="page-banner section-padding-y" <?php if ($image && $image["url"]) : ?>
+<section class="page-banner section-padding-y section-gap" <?php if ($image && $image["url"]) : ?>
   style="background: url('<?php echo esc_url($image["url"]); ?>') no-repeat center/cover ,  #235d41;" <?php endif; ?>>
   <div class="container">
     <div class="pb-content">
@@ -27,7 +27,6 @@ $image=get_field("pb_background_image");
         <?php echo esc_html($cta["title"]); ?>
       </a>
       <?php endif; ?>
-
     </div>
   </div>
 </section>

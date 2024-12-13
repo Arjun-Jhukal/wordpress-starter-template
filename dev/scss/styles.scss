@@ -3,3 +3,6 @@
 @use "./globals/global.media" as globalMedia;
 @use "./mixins/mixins";
 @use "./components/landing-page/page-banner";
+@use "./components/landing-page/about-block";
+@use "./components/clients-listing";
+@use "./components/cta";

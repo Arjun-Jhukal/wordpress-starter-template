@@ -25,12 +25,15 @@ body {
 	font-family: $inter;
 	font-size: 14px;
 	font-weight: 400;
+	background-color: $body;
 }
 
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
+	margin: 0;
 	span {
 		color: $primaryLight;
 	}
@@ -52,6 +55,8 @@ h4 {
 
 h2 {
 	font-family: $berlingske-serif-400;
+	font-size: 24px;
+	line-height: 32px;
 
 	span {
 		font-family: $berlingske-serif-800;
@@ -68,12 +73,22 @@ span,
 small,
 strong {
 	line-height: 24px;
+	margin: 0;
+	display: inline-block;
 }
 
 a {
 	text-decoration: none;
-	display: inline-block;
 	transition: all 0.3s ease-in-out;
+	color: initial;
+}
+
+ul,
+li,
+ol {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
 }
 
 small,
@@ -97,14 +112,59 @@ small,
 }
 
 .tpfl-btn {
+	border-radius: 4px;
+	padding: 12px 36px;
 	&.tpfl-btn-filled {
 		background-color: $primary;
 		color: $white;
-		border-radius: 4px;
-		padding: 12px 36px;
 
 		&:hover {
 			background-color: $primaryLight;
+		}
+	}
+	&.tpfl-btn-outlined {
+		border: 1px solid $primary;
+
+		&:hover {
+			background-color: $primary;
+			color: $white;
+		}
+	}
+}
+
+.section-title {
+	margin-bottom: 24px;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		&:has(+ p) {
+			margin-bottom: 12px;
+		}
+	}
+}
+
+.slick-dots {
+	position: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 32px;
+
+	li {
+		width: 12px;
+		height: 12px;
+		border-radius: 50%;
+		background-color: $primaryLight;
+
+		&.slick-active {
+			background-color: $primary;
+		}
+
+		* {
+			display: none !important;
 		}
 	}
 }

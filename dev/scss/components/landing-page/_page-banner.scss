@@ -1,10 +1,21 @@
 @use "../../globals/global";
 
 .page-banner {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: #0f1c15a8;
+	}
+
 	.pb-content {
 		max-width: 784px;
 		margin: 0 auto;
 		text-align: center;
+		position: relative;
+		z-index: 1;
 
 		.over-title,
 		h1,

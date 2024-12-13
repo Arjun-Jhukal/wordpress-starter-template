@@ -1,4 +1,15 @@
 @use "./global";
+@media (min-width: 992px) {
+	.section-title {
+		margin-bottom: 32px;
+	}
+	.section-gap {
+		margin-bottom: 72px;
+	}
+	.section-padding-y {
+		padding: 72px 0;
+	}
+}
 @media (min-width: 1200px) {
 	body {
 		font-size: 16px;

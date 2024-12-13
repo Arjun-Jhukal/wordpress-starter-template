@@ -22,3 +22,10 @@ function tpfl_scripts_enqueue(){
 }
 
 add_action("wp_enqueue_scripts", "tpfl_scripts_enqueue");
+
+
+function tpfl_admin_scripts_enqueue() {
+    /* Custom CSS for Dashboard */
+    wp_enqueue_style("custom-style-CSS", get_template_directory_uri() . "/assets/css/styles.css", array(), "1.0.0", null);
+}
+add_action("admin_enqueue_scripts", "tpfl_admin_scripts_enqueue");

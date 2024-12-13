@@ -2,6 +2,7 @@
 
 .header {
 	padding: 16px 0;
+	background-color: global.$white;
 	.primary-menu-wrapper {
 		position: fixed;
 		inset: 0;
@@ -14,6 +15,8 @@
 		padding: 32px 24px;
 		opacity: 0;
 		visibility: hidden;
+		background-color: global.$white;
+		transition: all 0.3s ease-in-out;
 
 		&.active {
 			opacity: 1;
@@ -41,7 +44,7 @@
 				a {
 					font-size: 14px;
 					line-height: 20px;
-					padding: 24px 0;
+					padding: 16px 0;
 					width: 100%;
 					border-radius: 8px;
 				}
@@ -60,6 +63,65 @@
 			}
 		}
 	}
+	.ham {
+		position: relative;
+		z-index: 11;
+		margin-left: 4px;
+		width: 32px;
+		height: 24px;
+
+		&::before,
+		&::after,
+		span {
+			position: absolute;
+			left: 0;
+			right: 0;
+			width: 32px;
+			height: 32px;
+			height: 2px;
+			background-color: global.$primary;
+		}
+
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease-in-out;
+		}
+
+		&::after {
+			top: 0;
+		}
+		span {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		&::before {
+			bottom: 0;
+		}
+
+		&.active {
+			span {
+				display: none;
+			}
+			&::before {
+				transform-origin: 5% 0%;
+				transform: rotate(-45deg);
+			}
+			&::after {
+				transform-origin: 0% 100%;
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+@media (min-width: 576px) {
+	.header {
+		.primary-menu-wrapper {
+			min-width: 450px;
+			left: unset;
+		}
+	}
 }
 
 @media (min-width: 768px) {
@@ -71,6 +133,7 @@
 			padding: 0;
 			opacity: 1;
 			visibility: visible;
+			max-width: unset;
 
 			ul {
 				gap: 8px;

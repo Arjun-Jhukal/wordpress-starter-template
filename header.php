@@ -41,11 +41,13 @@ $header_cta = get_field('header_cta', 'option');
 
         </div>
         <?php if($header_cta && $header_cta['url']):?>
-        <div class="header-cta text-end">
+        <div class="header-cta text-end d-flex align-items-center">
           <a href="<?php echo esc_url($header_cta['url'])?>"
             target="<?php echo !empty($header_cta['target'])?$header_cta['target']:'_self'?>"
             class="tpfl-btn tpfl-btn-filled"><?php echo esc_html($header_cta['title'])?></a>
-          <button type="button" class="ham d-md-none">=</button>
+          <button type="button" class="ham d-md-none">
+            <span></span>
+          </button>
         </div>
         <?php endif;?>
       </div>

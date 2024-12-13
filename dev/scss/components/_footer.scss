@@ -1,0 +1,142 @@
+@use "../globals/global";
+
+.footer {
+	position: relative;
+	overflow: hidden;
+	padding: 48px 0;
+
+	&::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -100px;
+		border-radius: 1440px;
+		background: var(--Primary-Light, #6e8f15);
+		filter: blur(36.5px);
+		height: 135px;
+	}
+	p,
+	a,
+	span,
+	strong,
+	small,
+	marquee {
+		color: global.$white;
+	}
+
+	.footer-about {
+		padding-bottom: 32px;
+		border-bottom: 1px solid global.$body;
+		.fa-content {
+			max-width: 516px;
+			margin: 0 auto;
+		}
+		.footer-logo {
+			margin-bottom: 16px;
+		}
+	}
+
+	.footer-links {
+		strong {
+			margin-bottom: 16px;
+			opacity: 0.4;
+			font-weight: 500;
+		}
+		ul {
+			li {
+				width: 100%;
+				a,
+				p,
+				span {
+					font-weight: 500;
+				}
+				a {
+					width: 100%;
+					position: relative;
+
+					&::after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						height: 2px;
+						width: 100%;
+						background-color: #7fb51f;
+						transform-origin: bottom right;
+						transition: transform 0.3s ease-out;
+						transform: scaleX(0);
+					}
+				}
+				&:hover {
+					a {
+						color: global.$white;
+						&::after {
+							transform: scaleX(1);
+							transform-origin: bottom left;
+						}
+					}
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 12px;
+				}
+
+				.label {
+					margin-bottom: 8px;
+					img {
+						margin-right: 4px;
+					}
+				}
+			}
+		}
+
+		&.contact {
+			ul {
+				li {
+					&:not(:last-child) {
+						margin-bottom: 24px;
+					}
+				}
+			}
+		}
+	}
+
+	.row {
+		--bs-gutter-y: 32px;
+	}
+
+	.copyright-and-watermark {
+		margin-top: 48px;
+
+		marquee {
+			font-size: 100px;
+			font-weight: 800;
+			line-height: 120px;
+			opacity: 0.1;
+			text-transform: uppercase;
+			text-align: center;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.footer {
+		padding: 72px 0 48px;
+		.copyright-and-watermark {
+			margin-top: 72px;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.footer {
+		.footer-about {
+			padding-bottom: 0;
+			border: none;
+			.fa-content {
+				max-width: unset;
+			}
+		}
+	}
+}

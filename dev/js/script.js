@@ -2,10 +2,21 @@ $(function () {
 	$(".ham").on("click", function (e) {
 		e.preventDefault();
 
-		$(".overlay").addClass("active");
-		$("body").addClass("overflow-hidden");
-		$(".primary-menu-wrapper").addClass("active");
+		$(".overlay").toggleClass("active");
+		$("body").toggleClass("overflow-hidden");
+		$(".primary-menu-wrapper").toggleClass("active");
+		$(this).toggleClass("active");
 	});
+
+	$(".overlay").on("click", function (e) {
+		e.preventDefault();
+
+		$(".overlay").removeClass("active");
+		$("body").removeClass("overflow-hidden");
+		$(".primary-menu-wrapper").removeClass("active");
+		$(".ham").removeClass("active");
+	});
+
 	$(".client-slider").slick({
 		mobileFirst: true,
 		slidesToShow: 2,

@@ -1,0 +1,126 @@
+@use "../globals/global";
+
+.header {
+	padding: 16px 0;
+	.primary-menu-wrapper {
+		position: fixed;
+		inset: 0;
+		max-height: 100vh;
+		overflow: auto;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 32px 24px;
+		opacity: 0;
+		visibility: hidden;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			ul {
+				li {
+					transform: translateX(0);
+				}
+			}
+		}
+
+		ul {
+			width: 100%;
+			li {
+				width: 100%;
+				text-align: center;
+				transform: translateX(100%);
+
+				@for $i from 1 through 10 {
+					&:nth-child(#{$i}) {
+						transition: all #{$i * 0.1}s linear;
+					}
+				}
+
+				a {
+					font-size: 14px;
+					line-height: 20px;
+					padding: 24px 0;
+					width: 100%;
+					border-radius: 8px;
+				}
+
+				&:not(:last-child) {
+					margin-bottom: 12px;
+				}
+				&.active,
+				&:hover,
+				&.current_page_item {
+					a {
+						background-color: global.$primary;
+						color: global.$white;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.header {
+		padding: 0;
+		.primary-menu-wrapper {
+			position: unset;
+			overflow: visible;
+			padding: 0;
+			opacity: 1;
+			visibility: visible;
+
+			ul {
+				gap: 8px;
+				li {
+					width: unset;
+					transform: translateX(0);
+					a {
+						padding: 24px 8px;
+						position: relative;
+						border-radius: 0;
+						&::after {
+							content: "";
+							position: absolute;
+							left: 0;
+							right: 0;
+							bottom: 0;
+							height: 4px;
+							background-color: global.$primary;
+							opacity: 0;
+							visibility: hidden;
+							transition: all 0.3s ease-in-out;
+						}
+					}
+					&:hover,
+					&.active,
+					&.current_page_item {
+						a {
+							background-color: transparent;
+							color: global.$primary;
+
+							&::after {
+								opacity: 1;
+								visibility: visible;
+							}
+						}
+					}
+					&:not(:last-child) {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.header {
+		.primary-menu-wrapper {
+			ul {
+				gap: 24px;
+			}
+		}
+	}
+}

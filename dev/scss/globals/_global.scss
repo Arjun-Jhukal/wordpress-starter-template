@@ -82,6 +82,11 @@ a {
 	transition: all 0.3s ease-in-out;
 	color: initial;
 }
+button {
+	background-color: transparent;
+	outline: none;
+	border: none;
+}
 
 ul,
 li,
@@ -166,5 +171,31 @@ small,
 		* {
 			display: none !important;
 		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $white;
+	z-index: 8;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.2s ease-in-out, clip-path 0.3s ease-in-out;
+
+	clip-path: circle(0% at 100% 0%);
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		clip-path: circle(150% at 100% 0%);
+	}
+
+	@supports not (clip-path: circle()) {
+		border-radius: 50%;
+		background: $white;
 	}
 }

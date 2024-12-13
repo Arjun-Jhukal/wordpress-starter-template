@@ -1,4 +1,11 @@
 $(function () {
+	$(".ham").on("click", function (e) {
+		e.preventDefault();
+
+		$(".overlay").addClass("active");
+		$("body").addClass("overflow-hidden");
+		$(".primary-menu-wrapper").addClass("active");
+	});
 	$(".client-slider").slick({
 		mobileFirst: true,
 		slidesToShow: 2,

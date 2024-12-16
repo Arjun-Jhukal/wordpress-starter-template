@@ -26,10 +26,12 @@ $header_cta = get_field('header_cta', 'option');
   <header class="header">
     <div class="container">
       <div class="header-content-box d-flex justify-content-between align-items-center">
+        <?php if($header_logo):?>
         <a href="<?php echo home_url();?>" class="header-logo">
-          <img src="<?php echo esc_url($header_logo['url'])?>" alt="<?php echo esc_attr($header_logo['alt'])?>"
+          <img src="<?php echo esc_url($header_logo['url']);?>" alt="<?php echo esc_attr($header_logo['alt']);?>"
             class="img-fluid">
         </a>
+        <?php endif;?>
         <div class="primary-menu-wrapper">
           <?php
         wp_nav_menu([

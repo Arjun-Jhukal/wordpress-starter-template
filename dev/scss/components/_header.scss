@@ -18,6 +18,11 @@
 		background-color: global.$white;
 		transition: all 0.3s ease-in-out;
 
+		@starting-style {
+			opacity: 0;
+			visibility: hidden;
+		}
+
 		&.active {
 			opacity: 1;
 			visibility: visible;
@@ -34,6 +39,10 @@
 				width: 100%;
 				text-align: center;
 				transform: translateX(100%);
+
+				@starting-style {
+					transform: translateX(100%);
+				}
 
 				@for $i from 1 through 10 {
 					&:nth-child(#{$i}) {

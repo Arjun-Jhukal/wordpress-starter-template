@@ -1,7 +1,14 @@
 <?php
 
-add_theme_support('menus');
-add_theme_support('post-thumbnails', array('post', 'page'));
+function tpfl_theme_support()
+{
+    add_theme_support('title-tag');
+    add_theme_support('tags');
+    add_theme_support('post-thumbnails');
+    add_theme_support('menus');
+}
+add_action('after_setup_theme', 'tpfl_theme_support');
+add_post_type_support('posts', 'excerpt');
 
 // SVG support
 function cc_mime_types($mimes)

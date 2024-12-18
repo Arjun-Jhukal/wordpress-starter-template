@@ -40,4 +40,44 @@ if(function_exists('acf_register_block_type')){
     'icon'=>'images-alt2',
     'keywords'=> array("CTA","Call To Action")
   ));
+  
+  acf_register_block_type(array(
+    'name'=>'page-intro',
+    'title'=>'Page Intro',
+    'description'=>__('A First Block after breadcrumb with an image title and description'),
+    'render_template'=>__('template-parts/blocks/page-intro.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("Page Intro","Intro","Custom Page Intro")
+  ));
+
+  acf_register_block_type(array(
+    'name'=>'mission-vision',
+    'title'=>'TPFL Mission Vision',
+    'description'=>__('A First Block to show company mission and vision'),
+    'render_template'=>__('template-parts/blocks/mission-vision.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("Mission","Vision","Mission & Vision")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'vision-elements',
+    'title'=>'TPFL Vision Elements',
+    'description'=>__('A card layout with icon title and description'),
+    'render_template'=>__('template-parts/blocks/vision-element.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("Vision Elements","Vision")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'title-description-on-left-list-on-right',
+    'title'=>'Title Description on Left and List on Right',
+    'description'=>__('A section that display title description on left and ordered list on the right.'),
+    'render_template'=>__('template-parts/blocks/values.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("Values","Steps","Title Description on Left and List on Right")
+  ));
 }

@@ -1,4 +1,4 @@
-$(function () {
+$(function ($) {
 	$(".ham").on("click", function (e) {
 		e.preventDefault();
 

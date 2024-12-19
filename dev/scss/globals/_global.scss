@@ -10,9 +10,11 @@ $inter: "Inter", sans-serif;
 
 $primary: #235d41;
 $black: #1c1d1d;
+$blackTransparent: rgba(0, 0, 0, 0.1);
 $primaryLight: #6e8f15;
 $white: #fff;
 $body: #f2efe7;
+$description: #585c5c;
 
 * {
 	padding: 0;
@@ -26,6 +28,7 @@ body {
 	font-size: 14px;
 	font-weight: 400;
 	background-color: $body;
+	color: $description;
 }
 
 h1,
@@ -92,13 +95,25 @@ a {
 	color: initial;
 }
 
-input {
-	&:not([type="checkbox"]):not([type="radio"]) {
-		width: 100%;
-	}
+textarea,
+select,
+input:not([type="checkbox"]):not([type="radio"]) {
+	width: 100%;
+	padding: 8px 16px;
+	border: 1px solid $blackTransparent;
+	border-radius: 8px;
+
 	&::placeholder {
 		opacity: 0.4;
 	}
+	&:focus {
+		outline: $primary;
+	}
+}
+
+textarea,
+select,
+input {
 	&:focus {
 		outline: $primary;
 	}
@@ -136,6 +151,21 @@ small,
 
 .section-gap {
 	margin-bottom: 48px;
+}
+
+.bg-gradient {
+	position: relative;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: linear-gradient(180deg, #fff 0%, #f2efe7 100%);
+		height: clamp(250px, 50vh, 488px);
+		z-index: -1;
+	}
 }
 
 .tpfl-btn {
@@ -211,5 +241,39 @@ small,
 	&.active {
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.select-field {
+	border-radius: 8px;
+	position: relative;
+	background-color: $white;
+
+	&::after {
+		content: "";
+		position: absolute;
+		right: 8px;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 12px;
+		height: 7px;
+		background: url(../images/angle-down.svg) no-repeat center/contain;
+	}
+
+	select {
+		cursor: pointer;
+		appearance: none;
+		-webkit-appearance: none;
+		background-color: transparent;
+		position: relative;
+		z-index: 1;
+	}
+}
+
+.tab-content {
+	display: none;
+
+	&.active {
+		display: block;
 	}
 }

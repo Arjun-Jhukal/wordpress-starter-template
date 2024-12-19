@@ -1,0 +1,26 @@
+.page-intro {
+	.pi-content {
+		h1 {
+			margin-bottom: 16px;
+		}
+		p + .featured-image,
+		p + img {
+			margin-top: 32px;
+			max-height: 448px;
+			border-radius: 8px;
+			overflow: hidden;
+			object-fit: cover;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.page-intro {
+		.pi-content {
+			p + .featured-image,
+			p + img {
+				margin-top: 40px;
+			}
+		}
+	}
+}

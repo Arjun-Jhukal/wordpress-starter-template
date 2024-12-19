@@ -1,0 +1,114 @@
+@use "../globals/global";
+
+.team-members {
+	.tab-controller {
+		border-bottom: 1px solid global.$blackTransparent;
+		margin-bottom: 32px;
+		li {
+			a {
+				padding: 8px 16px;
+			}
+			&:hover,
+			&.active {
+				a {
+					background-color: global.$primary;
+					color: global.$white;
+				}
+			}
+		}
+	}
+}
+
+.team-member {
+	border-radius: 8px;
+	border: 1px solid global.$blackTransparent;
+	background: rgba(255, 255, 255, 0.6);
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.06);
+	padding: 16px;
+
+	.tmc-header {
+		margin-bottom: 16px;
+		.tm-profile {
+			max-width: 100px;
+			aspect-ratio: 1/1;
+			border-radius: 50%;
+			overflow: hidden;
+			object-fit: cover;
+		}
+		.tm-info {
+			gap: 12px;
+		}
+	}
+	.socials {
+		margin-top: 4px;
+
+		ul {
+			gap: 8px;
+			li {
+				a {
+					background-color: global.$primary;
+					width: 32px;
+					height: 32px;
+					text-align: center;
+					line-height: 32px;
+					border-radius: 50%;
+
+					&:hover {
+						background-color: global.$primaryLight;
+						transform: translateY(-5px);
+					}
+				}
+			}
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 16px;
+	}
+}
+
+@media (min-width: 768px) {
+	.team-members {
+		.tab-controller {
+			li {
+				a {
+					padding: 16px 48px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.team-members {
+		.tab-controller {
+			margin-bottom: 48px;
+		}
+		.tab-wrapper {
+			max-width: 952px;
+			margin: 0 auto;
+		}
+	}
+
+	.team-member {
+		gap: 32px;
+
+		.tm-profile {
+			min-width: 264px;
+			width: 264px;
+			border-radius: 4px;
+			min-height: 316px;
+			height: 316px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+
+		.socials {
+			margin-top: 0;
+		}
+	}
+}

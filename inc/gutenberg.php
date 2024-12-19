@@ -80,4 +80,14 @@ if(function_exists('acf_register_block_type')){
     'icon'=>'images-alt2',
     'keywords'=> array("Values","Steps","Title Description on Left and List on Right")
   ));
+
+  acf_register_block_type(array(
+    'name'=>'enable-team',
+    'title'=>'Team Member',
+    'description'=>__('A Block that determine whether or not to show team members on the page.'),
+    'render_template'=>__('template-parts/blocks/team.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("Team","Our Team","Custom Team Block")
+  ));
 }

@@ -1,4 +1,4 @@
-$(function ($) {
+$(function () {
 	$(".ham").on("click", function (e) {
 		e.preventDefault();
 
@@ -50,5 +50,34 @@ $(function ($) {
 				},
 			},
 		],
+	});
+
+	$(function () {
+		function HandleTabContentActive(currentActive) {
+			$(`.tab-content#${currentActive}`)
+				.addClass("active")
+				.siblings()
+				.removeClass("active");
+		}
+		$(".tab-controller ul li a").each(function () {
+			$(this).on("click", function (e) {
+				e.preventDefault();
+				var currentActive = $(this).data("target");
+				console.log(currentActive);
+
+				$(this)
+					.parent("li")
+					.addClass("active")
+					.siblings()
+					.removeClass("active");
+
+				HandleTabContentActive(currentActive);
+			});
+		});
+		$(".tab-controller select").on("change", function (e) {
+			var currentActive = $(this).val();
+
+			HandleTabContentActive(currentActive);
+		});
 	});
 });

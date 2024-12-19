@@ -57,4 +57,16 @@ $header_cta = get_field('header_cta', 'option');
   </header>
 
   <a href="#" class="overlay"></a>
-  <main>
+  <main class="<?php echo (is_front_page()||is_page('home')) ?'':'bg-gradient'?>">
+
+    <?php if(!is_front_page()||!is_page('home')): ?>
+    <section class="breadcrumb">
+      <div class="container">
+        <div class="breadcrumb-content">
+          <ul>
+            <li><a href="<?php echo home_url();?>">Home</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <?php endif; ?>

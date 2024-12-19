@@ -62,6 +62,12 @@
 		}
 	}
 
+	.tm-content {
+		p {
+			color: global.$black;
+		}
+	}
+
 	&:not(:last-child) {
 		margin-bottom: 16px;
 	}
@@ -91,6 +97,7 @@
 
 	.team-member {
 		gap: 32px;
+		overflow: hidden;
 
 		.tm-profile {
 			min-width: 264px;
@@ -109,6 +116,18 @@
 
 		.socials {
 			margin-top: 0;
+			opacity: 0;
+			transform: translateX(100px);
+			visibility: hidden;
+			transition: all 0.1s ease-in-out;
+		}
+
+		&:hover {
+			.socials {
+				opacity: 1;
+				visibility: visible;
+				transform: translateX(0);
+			}
 		}
 	}
 }

@@ -58,7 +58,14 @@ $(function () {
 				.addClass("active")
 				.siblings()
 				.removeClass("active");
+
+			$(".it-image").each(function () {
+				if (currentActive === $(this).data("index")) {
+					$(this).addClass("active").siblings().removeClass("active");
+				}
+			});
 		}
+
 		$(".tab-controller ul li a").each(function () {
 			$(this).on("click", function (e) {
 				e.preventDefault();

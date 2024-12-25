@@ -1,0 +1,76 @@
+@use "../../globals/global";
+.tpfl-philosophy {
+	.section-title {
+		max-width: 784px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	h2,
+	span,
+	p,
+	h4,
+	h1 {
+		color: global.$white;
+	}
+	.philosophy-single {
+		.ps-icon {
+			width: 96px;
+			height: 96px;
+			border-radius: 50%;
+			background-color: global.$primaryLight;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 24px;
+		}
+		.ps-content {
+			h4 {
+				margin-bottom: 4px;
+			}
+		}
+	}
+
+	.row {
+		> div {
+			&:not(:last-child) {
+				.philosophy-single {
+					padding-bottom: 24px;
+					margin-bottom: 24px;
+					border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.tpfl-philosophy {
+		.philosophy-single {
+			gap: 16px;
+			.ps-icon {
+				min-width: 96px;
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.tpfl-philosophy {
+		.row {
+			--bs-gutter-y: 56px;
+			--bs-gutter-x: 56px;
+
+			> div {
+				&:not(:last-child) {
+					.philosophy-single {
+						padding-bottom: 0;
+						margin-bottom: 0;
+						border-bottom: none;
+					}
+				}
+			}
+		}
+	}
+}

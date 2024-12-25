@@ -31,6 +31,11 @@
 	}
 
 	h4 {
+		font-size: 20px;
+		line-height: 24px;
+	}
+
+	h5 {
 		font-size: 18px;
 		line-height: 26px;
 	}
@@ -61,6 +66,6 @@
 
 @media (min-width: 1440px) {
 	.container {
-		max-width: 1280px;
+		max-width: 1284px;
 	}
 }

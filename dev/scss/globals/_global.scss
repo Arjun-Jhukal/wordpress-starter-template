@@ -53,7 +53,8 @@ h1 {
 }
 
 h1,
-h4 {
+h4,
+h5 {
 	font-family: $berlingske-serif-700;
 }
 
@@ -154,6 +155,12 @@ small,
 	margin-bottom: 48px;
 }
 
+.section-padding-y.section-gap {
+	&:has(+ .section-padding-y) {
+		margin-bottom: 0;
+	}
+}
+
 .bg-gradient {
 	position: relative;
 
@@ -164,9 +171,13 @@ small,
 		left: 0;
 		right: 0;
 		background: linear-gradient(180deg, #fff 0%, #f2efe7 100%);
-		height: clamp(250px, 50vh, 488px);
+		height: clamp(250px, 55vh, 720px);
 		z-index: -1;
 	}
+}
+
+.bg-primary {
+	background-color: $primary !important;
 }
 
 .tpfl-btn {
@@ -253,7 +264,7 @@ small,
 	&::after {
 		content: "";
 		position: absolute;
-		right: 8px;
+		right: 20px;
 		top: 50%;
 		transform: translateY(-50%);
 		width: 12px;
@@ -268,6 +279,30 @@ small,
 		background-color: transparent;
 		position: relative;
 		z-index: 1;
+	}
+}
+
+.tab-controller {
+	border-bottom: 1px solid $blackTransparent;
+	margin-bottom: 32px;
+	li {
+		a {
+			padding: 8px 16px;
+		}
+		&:hover,
+		&.active {
+			a {
+				background-color: $primary;
+				color: $white;
+			}
+		}
+	}
+	.select-field {
+		padding: 16px;
+		background-color: $primaryLight;
+		select {
+			border: none;
+		}
 	}
 }
 

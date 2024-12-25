@@ -1,24 +1,5 @@
 @use "../globals/global";
 
-.team-members {
-	.tab-controller {
-		border-bottom: 1px solid global.$blackTransparent;
-		margin-bottom: 32px;
-		li {
-			a {
-				padding: 8px 16px;
-			}
-			&:hover,
-			&.active {
-				a {
-					background-color: global.$primary;
-					color: global.$white;
-				}
-			}
-		}
-	}
-}
-
 .team-member {
 	border-radius: 8px;
 	border: 1px solid global.$blackTransparent;

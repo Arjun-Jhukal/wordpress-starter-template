@@ -1,0 +1,52 @@
+.our-approach {
+	.approach-single {
+		border-radius: 8px;
+		border: 1px solid rgba(88, 92, 92, 0.3);
+		padding: 24px 12px;
+		.approach-icon {
+			max-width: 48px;
+			margin-bottom: 24px;
+		}
+		.approach-content {
+			h4 {
+				margin-bottom: 8px;
+			}
+		}
+	}
+
+	.row {
+		> div {
+			&:not(:last-child) {
+				.approach-single {
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.our-approach {
+		.section-title {
+			max-width: 784px;
+		}
+		.approach-single {
+			padding: 32px 24px;
+		}
+	}
+}
+@media (min-width: 992px) {
+	.our-approach {
+		.approach-single {
+			height: 100%;
+		}
+		.row {
+			> div {
+				&:not(:last-child) {
+					.approach-single {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

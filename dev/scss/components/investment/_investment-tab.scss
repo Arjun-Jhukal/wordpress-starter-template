@@ -1,0 +1,111 @@
+@use "../../globals/global";
+.investment-tab {
+	background: rgba(255, 255, 255, 0.4);
+
+	.it-images {
+		.it-image {
+			height: 324px;
+			width: 100%;
+			display: none;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&.active {
+				display: inline-block;
+			}
+		}
+	}
+
+	.tab-wrapper {
+		.tab-controller {
+			li {
+				a {
+					font-family: global.$berlingske-serif-700-italic;
+				}
+			}
+		}
+		.tab-content-wrapper {
+			.tab-content {
+				h2,
+				h3,
+				h4,
+				h5,
+				h6 {
+					font-family: global.$berlingske-serif-700;
+					font-size: 20px;
+					line-height: 29px;
+					margin-bottom: 16px;
+				}
+				p {
+					&:not(:last-child) {
+						margin-bottom: 8px;
+					}
+				}
+				ul,
+				ol {
+					padding-left: 20px;
+					&:not(:first-child) {
+						margin-top: 16px;
+					}
+					li {
+						&:not(:last-child) {
+							margin-bottom: 8px;
+						}
+					}
+				}
+				ul {
+					li {
+						list-style-type: disc;
+					}
+				}
+				ol {
+					li {
+						list-style-type: decimal;
+					}
+				}
+
+				.it-images {
+					margin-bottom: 16px;
+					.it-image {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.investment-tab {
+		.it-images {
+			height: clamp(324px, 100%, 400px);
+
+			.it-image {
+				max-width: 452px;
+			}
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.investment-tab {
+		.tab-wrapper {
+			.tab-content-wrapper {
+				.tab-content {
+					h2,
+					h3,
+					h4,
+					h5,
+					h6 {
+						font-size: 28px;
+						line-height: 40px;
+					}
+				}
+			}
+		}
+	}
+}

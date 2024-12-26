@@ -140,4 +140,14 @@ if(function_exists('acf_register_block_type')){
     'icon'=>'images-alt2',
     'keywords'=> array("TPFL Contact Form","Custom Contact Form", "Form")
   ));
+    
+  acf_register_block_type(array(
+    'name'=>'enable-career-listing',
+    'title'=>'Enable Disable Career Listing',
+    'description'=>__('A Block to enable or disable career listing.'),
+    'render_template'=>__('template-parts/blocks/career/career-listing.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL Career Listing","Career", "Listing")
+  ));
 }

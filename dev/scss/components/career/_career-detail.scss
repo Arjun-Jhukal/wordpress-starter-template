@@ -1,0 +1,64 @@
+@use "../../globals/global";
+
+.career-detail-content {
+	.dc-content-box {
+		max-width: 984px;
+		margin: 0 auto 48px;
+
+		h2 {
+			font-family: global.$berlingske-serif-600;
+			margin-bottom: 8px;
+			&:not(:first-child) {
+				padding-top: 32px;
+				margin-top: 32px;
+				border-top: 1px solid rgb(88, 92, 92, 0.1);
+			}
+		}
+
+		p {
+			+ p {
+				margin-top: 8px;
+			}
+			&:last-child {
+				padding-top: 32px;
+				margin-top: 32px;
+				border-top: 1px solid rgb(88, 92, 92, 0.1);
+			}
+		}
+
+		ul,
+		ol {
+			padding-left: 16px;
+			li {
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+		ul {
+			li {
+				list-style-type: disc;
+			}
+		}
+		ol {
+			li {
+				list-style-type: decimal;
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.career-detail-content {
+		.dc-content-box {
+			margin: 0 auto 80px;
+
+			h2 {
+				&:not(:first-child) {
+					padding-top: 40px;
+					margin-top: 40px;
+				}
+			}
+		}
+	}
+}

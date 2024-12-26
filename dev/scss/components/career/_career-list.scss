@@ -1,0 +1,81 @@
+@use "../../globals/global";
+
+.career-listing {
+	.careers {
+		.career {
+			background-color: global.$white;
+			border-radius: 8px;
+			border: 1px solid rgba(88, 92, 92, 0.2);
+			padding: 16px;
+			gap: 12px;
+
+			h4 {
+				margin-bottom: 8px;
+			}
+			ul {
+				padding-left: 16px;
+				margin-bottom: 8px;
+				li {
+					list-style-type: disc;
+					&:not(:last-child) {
+						margin-bottom: 4px;
+					}
+
+					span.error {
+						color: global.$red;
+					}
+				}
+			}
+
+			.career-icon {
+				width: 40px;
+				aspect-ratio: 1 / 1;
+				border-radius: 50%;
+				background-color: #6e8f151a;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 8px;
+			}
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.career-listing {
+		.careers {
+			.career {
+				padding: 24px;
+				gap: 24px;
+				ul {
+					gap: 24px;
+					padding-left: 0;
+					li {
+						&:first-child {
+							list-style-type: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.career-listing {
+		.careers {
+			.career {
+				position: relative;
+				a.view-btn {
+					position: absolute;
+					top: 50%;
+					right: 24px;
+					transform: translateY(-50%);
+				}
+			}
+		}
+	}
+}

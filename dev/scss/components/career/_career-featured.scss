@@ -1,0 +1,19 @@
+@use "../../globals/global";
+
+.career-detail-featured {
+	.featured-image {
+		border-radius: 8px;
+		overflow: hidden;
+	}
+	.key-highlight-wrapper {
+		padding: 24px 0;
+		border-top: 1px solid global.$blackTransparent;
+	}
+}
+@media (min-width: 992px) {
+	.career-detail-featured {
+		.key-highlight-wrapper {
+			padding: 32px 0;
+		}
+	}
+}

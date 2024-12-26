@@ -1,24 +1,20 @@
 @use "../../globals/global";
 
-.contact-us-form {
-	.contact-form-wrapper {
-		max-width: 984px;
-		margin: 0 auto;
-		background-color: global.$white;
-		padding: 24px;
-		border-radius: 12px;
-	}
-	.bottom-btn-wrapper {
-		max-width: fit-content;
-		position: relative;
-	}
+.contact-form-wrapper {
+	max-width: 984px;
+	margin: 0 auto;
+	background-color: global.$white;
+	padding: 24px;
+	border-radius: 12px;
+}
+.bottom-btn-wrapper {
+	max-width: fit-content;
+	position: relative;
 }
 
 @media (min-width: 768px) {
-	.contact-us-form {
-		.contact-form-wrapper {
-			padding: 48px;
-			border-radius: 16px;
-		}
+	.contact-form-wrapper {
+		padding: 48px;
+		border-radius: 16px;
 	}
 }

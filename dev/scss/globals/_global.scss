@@ -15,6 +15,7 @@ $primaryLight: #6e8f15;
 $white: #fff;
 $body: #f2efe7;
 $description: #585c5c;
+$red: #ef0e24;
 
 * {
 	padding: 0;
@@ -205,6 +206,16 @@ small,
 		}
 	}
 }
+.tpfl-btn-text {
+	color: $primary;
+	&:hover {
+		color: $primaryLight;
+	}
+}
+.tpfl-btn-underlined {
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
 
 input[type="submit"] {
 	border-radius: 4px;
@@ -229,6 +240,9 @@ input[type="submit"] {
 		&:has(+ p) {
 			margin-bottom: 12px;
 		}
+	}
+	h2 {
+		font-family: $berlingske-serif-600;
 	}
 }
 
@@ -279,10 +293,41 @@ input[type="submit"] {
 	span {
 		display: block;
 	}
+
 	label {
 		margin-bottom: 8px;
 		display: block;
 		font-family: $berlingske-serif-600;
+	}
+
+	h5 {
+		font-family: $inter;
+		font-weight: 600;
+		span {
+			display: inline-block;
+		}
+	}
+
+	.file-uploader {
+		border-radius: 8px;
+		border: 1px dashed $primary;
+		background: rgba(35, 93, 65, 0.05);
+		padding: 32px 16px;
+		position: relative;
+
+		.wpcf7-form-control-wrap {
+			position: unset;
+		}
+
+		input {
+			position: absolute;
+			inset: 0;
+			opacity: 0;
+		}
+
+		h5 {
+			margin-bottom: 12px;
+		}
 	}
 }
 

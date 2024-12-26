@@ -90,4 +90,54 @@ if(function_exists('acf_register_block_type')){
     'icon'=>'images-alt2',
     'keywords'=> array("Team","Our Team","Custom Team Block")
   ));
+  
+  acf_register_block_type(array(
+    'name'=>'tpfl-approach',
+    'title'=>'TPFL Approach',
+    'description'=>__('A Block with title brief and three card layout'),
+    'render_template'=>__('template-parts/blocks/investment/our-approach.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL","Approach","Our Approach","Custom Approach Block")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'tpfl-philosophy',
+    'title'=>'TPFL Philosophy',
+    'description'=>__('A Block with title brief and two card layout in a column'),
+    'render_template'=>__('template-parts/blocks/investment/philosophy.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL","Philosophy","Our Philosophy","Custom Philosophy Block")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'tpfl-investment-tab',
+    'title'=>'TPFL Investment Tab',
+    'description'=>__('A Block with image on the left and tab on the right'),
+    'render_template'=>__('template-parts/blocks/investment/investment-tab.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL","Investment Tab","Our Investment Tab","Custom Investment Tab Block")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'tpfl-contact-us-intro',
+    'title'=>'TPFL Contact Page Intro',
+    'description'=>__('A Block to add content for contact us page intro.'),
+    'render_template'=>__('template-parts/blocks/contact-us/contact-us.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL Contact Page Intro","Custom Contact Info Block")
+  ));
+  
+  acf_register_block_type(array(
+    'name'=>'tpfl-contact-form',
+    'title'=>'TPFL Contact Form',
+    'description'=>__('A Block to enable or disable contact Form.'),
+    'render_template'=>__('template-parts/blocks/contact-us/contact-form.php'),
+    'category'=>'widget',
+    'icon'=>'images-alt2',
+    'keywords'=> array("TPFL Contact Form","Custom Contact Form", "Form")
+  ));
 }

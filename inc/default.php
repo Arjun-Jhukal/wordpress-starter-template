@@ -14,6 +14,7 @@ add_post_type_support('posts', 'excerpt');
 function cc_mime_types($mimes)
 {
   $mimes['svg'] = 'image/svg+xml';
+  $mimes['webp'] = 'image/webp';
   return $mimes;
 }
 add_filter('upload_mimes', 'cc_mime_types');
@@ -25,3 +26,5 @@ function register_tpfl_menu(){
 }
 
 add_action('after_setup_theme', 'register_tpfl_menu');
+
+add_filter('wpcf7_autop_or_not', '__return_false');

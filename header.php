@@ -23,17 +23,18 @@
 $header_logo = get_field('header_logo', 'option');
 $header_cta = get_field('header_cta', 'option');
 ?>
-  <header class="header">
-    <div class="container">
-      <div class="header-content-box d-flex justify-content-between align-items-center">
-        <?php if($header_logo):?>
-        <a href="<?php echo home_url();?>" class="header-logo">
-          <img src="<?php echo esc_url($header_logo['url']);?>" alt="<?php echo esc_attr($header_logo['alt']);?>"
-            class="img-fluid">
-        </a>
-        <?php endif;?>
-        <div class="primary-menu-wrapper">
-          <?php
+  <header class="header <?php echo is_front_page()|is_page('home')?"front-page":""; ?>">
+    <div class="header-wrapper">
+      <div class="container">
+        <div class="header-content-box d-flex justify-content-between align-items-center">
+          <?php if($header_logo):?>
+          <a href="<?php echo home_url();?>" class="header-logo">
+            <img src="<?php echo esc_url($header_logo['url']);?>" alt="<?php echo esc_attr($header_logo['alt']);?>"
+              class="img-fluid">
+          </a>
+          <?php endif;?>
+          <div class="primary-menu-wrapper">
+            <?php
         wp_nav_menu([
           'theme-location'=>'primary-menu',
           'container'=>false,
@@ -41,17 +42,18 @@ $header_cta = get_field('header_cta', 'option');
         ]);
         ?>
 
+          </div>
+          <?php if($header_cta && $header_cta['url']):?>
+          <div class="header-cta text-end d-flex align-items-center">
+            <a href="<?php echo esc_url($header_cta['url'])?>"
+              target="<?php echo !empty($header_cta['target'])?$header_cta['target']:'_self'?>"
+              class="tpfl-btn tpfl-btn-filled"><?php echo esc_html($header_cta['title'])?></a>
+            <button type="button" class="ham d-md-none">
+              <span></span>
+            </button>
+          </div>
+          <?php endif;?>
         </div>
-        <?php if($header_cta && $header_cta['url']):?>
-        <div class="header-cta text-end d-flex align-items-center">
-          <a href="<?php echo esc_url($header_cta['url'])?>"
-            target="<?php echo !empty($header_cta['target'])?$header_cta['target']:'_self'?>"
-            class="tpfl-btn tpfl-btn-filled"><?php echo esc_html($header_cta['title'])?></a>
-          <button type="button" class="ham d-md-none">
-            <span></span>
-          </button>
-        </div>
-        <?php endif;?>
       </div>
     </div>
   </header>

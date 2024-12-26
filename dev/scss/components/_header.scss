@@ -3,6 +3,24 @@
 .header {
 	padding: 16px 0;
 	background-color: global.$white;
+
+	&:not(.front-page) {
+		position: relative;
+
+		&::before {
+			content: "";
+			position: absolute;
+			inset: 0;
+			border-radius: 50%;
+			background: global.$primaryLight;
+			filter: blur(36.5px);
+		}
+		.header-wrapper {
+			position: relative;
+			z-index: 1;
+			background-color: global.$white;
+		}
+	}
 	.primary-menu-wrapper {
 		position: fixed;
 		inset: 0;
@@ -71,6 +89,10 @@
 				}
 			}
 		}
+	}
+
+	.header-cta {
+		gap: 8px;
 	}
 	.ham {
 		position: relative;

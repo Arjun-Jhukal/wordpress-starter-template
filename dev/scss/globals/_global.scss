@@ -135,6 +135,11 @@ ol {
 	list-style-type: none;
 }
 
+iframe {
+	width: 100%;
+	height: clamp(400px, 60vh, 600px);
+}
+
 small,
 .sm-text,
 .over-title {
@@ -201,6 +206,19 @@ small,
 	}
 }
 
+input[type="submit"] {
+	border-radius: 4px;
+	padding: 12px 36px;
+	background-color: $primary;
+	color: $white;
+	cursor: pointer;
+	max-width: fit-content;
+
+	&:hover {
+		background-color: $primaryLight;
+	}
+}
+
 .section-title {
 	margin-bottom: 24px;
 	h1,
@@ -253,6 +271,18 @@ small,
 	&.active {
 		opacity: 1;
 		visibility: visible;
+	}
+}
+
+.input-field {
+	margin-bottom: 24px;
+	span {
+		display: block;
+	}
+	label {
+		margin-bottom: 8px;
+		display: block;
+		font-family: $berlingske-serif-600;
 	}
 }
 
@@ -311,5 +341,18 @@ small,
 
 	&.active {
 		display: block;
+	}
+}
+
+.wpcf7-spinner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.wpcf7-form.submitting {
+	input[type="submit"] {
+		pointer-events: none;
 	}
 }

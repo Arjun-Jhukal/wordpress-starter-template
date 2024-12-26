@@ -85,7 +85,7 @@ $showTeam=get_field('enable_team');
                   <div class="info d-lg-flex justify-content-between">
                     <div class="name-wrapper">
                       <?php if($name):?>
-                      <h4><?php echo esc_html($name);?></h4>
+                      <h5><?php echo esc_html($name);?></h5>
                       <?php endif;?>
                       <?php if($designation):?>
                       <span><?php echo esc_html($designation);?></span>

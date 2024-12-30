@@ -81,6 +81,10 @@ small,
 strong {
 	line-height: 24px;
 	margin: 0;
+
+	&.error {
+		color: $red !important;
+	}
 }
 
 a,
@@ -399,5 +403,124 @@ input[type="submit"] {
 .wpcf7-form.submitting {
 	input[type="submit"] {
 		pointer-events: none;
+	}
+}
+
+.key-highlights {
+	gap: 24px;
+	li {
+		flex: 1 1 calc(50% - 12px);
+		gap: 12px;
+		strong {
+			color: $black;
+			display: block;
+		}
+	}
+	+ a {
+		margin-top: 24px;
+	}
+}
+
+.blog-single {
+	border-radius: 12px;
+	border: 1px solid $primary;
+	background: #fff;
+	box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
+	padding: 8px;
+
+	h5 a,
+	p {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		-webkit-line-clamp: 2;
+	}
+
+	.bs-image {
+		min-height: 204px;
+		overflow: hidden;
+		border-radius: 8px;
+
+		a {
+			height: 100%;
+			display: block;
+		}
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.bs-content-wrapper {
+		padding: 24px 16px;
+
+		.bs-content {
+			h5 {
+				&:has(+ p) {
+					margin-bottom: 12px;
+				}
+			}
+		}
+		.bs-info {
+			padding-top: 16px;
+			margin-top: 16px;
+			border-top: 1px solid $blackTransparent;
+
+			ul {
+				gap: 24px;
+
+				li {
+					padding-left: 28px;
+					position: relative;
+
+					img {
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+			}
+
+			small {
+				color: $black;
+			}
+		}
+	}
+}
+
+.pagination {
+	gap: 12px;
+	margin-top: 32px;
+	justify-content: center;
+
+	span,
+	a {
+		width: 48px;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		font-weight: 600;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&.prev {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		&:hover,
+		&.current {
+			background-color: $primary;
+			color: $white;
+
+			svg {
+				path {
+					stroke: $white;
+				}
+			}
+		}
 	}
 }

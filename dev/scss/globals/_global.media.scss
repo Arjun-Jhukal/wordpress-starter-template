@@ -1,4 +1,15 @@
 @use "./global";
+
+@media (min-width: 768px) {
+	.key-highlights {
+		li {
+			flex: 0 0 calc(32% - 12px);
+		}
+	}
+	.blog-single {
+		height: 100%;
+	}
+}
 @media (min-width: 992px) {
 	.section-title {
 		margin-bottom: 32px;
@@ -12,6 +23,16 @@
 
 	.input-field {
 		margin-bottom: 32px;
+	}
+
+	.key-highlights {
+		gap: 32px;
+		li {
+			flex: unset;
+		}
+		+ a {
+			margin-top: 0;
+		}
 	}
 }
 @media (min-width: 1200px) {
@@ -66,10 +87,18 @@
 	.section-padding-y {
 		padding: 96px 0;
 	}
+
+	.key-highlights {
+		gap: 48px;
+	}
 }
 
 @media (min-width: 1440px) {
 	.container {
 		max-width: 1284px;
+	}
+
+	.key-highlights {
+		gap: 64px;
 	}
 }

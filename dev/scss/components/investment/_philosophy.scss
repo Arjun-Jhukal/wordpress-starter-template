@@ -18,11 +18,17 @@
 			width: 96px;
 			height: 96px;
 			border-radius: 50%;
-			background-color: global.$primaryLight;
+			border: 4px solid global.$primaryLight;
+			background-color: global.$white;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 24px;
+
+			svg {
+				max-width: 100%;
+				height: auto;
+			}
 		}
 		.ps-content {
 			h4 {

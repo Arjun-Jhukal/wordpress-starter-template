@@ -1,0 +1,63 @@
+@use "../globals/global";
+
+.general-section {
+	.gs-content {
+		h1 {
+			margin-bottom: 8px;
+			+ span {
+				color: global.$black;
+				font-weight: 500;
+			}
+		}
+
+		h2 {
+			margin-bottom: 8px;
+			font-family: global.$berlingske-serif-600;
+		}
+		p:last-child,
+		h2 {
+			margin-top: 32px;
+		}
+		p + p,
+		p + ul {
+			margin-top: 16px;
+		}
+		strong {
+			color: global.$black;
+		}
+
+		ul {
+			padding-left: 20px;
+			li {
+				list-style-type: disc;
+				&::marker {
+					color: global.$black;
+				}
+				&:not(:last-child) {
+					margin-bottom: 8px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.general-section {
+		.gs-content {
+			h2,
+			p:last-child {
+				margin-top: 48px;
+			}
+		}
+	}
+}
+@media (min-width: 992px) {
+	.general-section {
+		.gs-content {
+			h2,
+			p:last-child {
+				margin-top: 52px;
+			}
+		}
+	}
+}

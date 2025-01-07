@@ -1,0 +1,59 @@
+@use "../globals/global";
+
+.not-found {
+	min-height: calc(100vh - 80px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 1;
+
+	.nf-content {
+		max-width: 553px;
+		margin: 0 auto;
+		text-align: center;
+
+		h1 {
+			text-transform: uppercase;
+			color: global.$primaryLight;
+			font-weight: 900;
+			font-family: global.$inter;
+			margin-top: 16px;
+			letter-spacing: 4.8px;
+		}
+		p {
+			color: global.$black;
+			margin: 16px 0 32px;
+		}
+	}
+	.top-left,
+	.bottom-right {
+		position: absolute;
+		z-index: -1;
+		max-width: 100px;
+	}
+
+	.top-left {
+		top: 0;
+		left: 16px;
+	}
+	.bottom-right {
+		bottom: 16px;
+		right: 16px;
+	}
+}
+
+@media (min-width: 992px) {
+	.not-found {
+		.nf-content {
+			h1 {
+				font-size: 48px;
+				font-weight: 900;
+			}
+		}
+		.top-left,
+		.bottom-right {
+			max-width: 261px;
+		}
+	}
+}

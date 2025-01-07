@@ -125,6 +125,21 @@ get_header();
                 <?php endforeach; ?>
               </ul>
             </div>
+            <div class="ba-block">
+              <h3>Archive</h3>
+              <ul>
+                <?php
+                wp_get_archives([
+                'type'            => 'yearly', // Archive by year
+                'limit'           => '',      // No limit on the number of years
+                'format'          => 'html',  // HTML format for list items
+                'before'          => '',      // Content before each item
+                'after'           => '',      // Content after each item
+                'show_post_count' => false,   // Whether to show the post count
+                ]);
+                ?>
+              </ul>
+            </div>
           </aside>
         </div>
       </div>

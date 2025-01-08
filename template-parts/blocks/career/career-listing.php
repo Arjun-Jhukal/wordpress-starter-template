@@ -17,8 +17,17 @@ if($show_career_list):
     </div>
     <div class="careers">
       <?php
-      $careers = new WP_Query(array(
-        'post_type'=> 'career',
+     $careers = new WP_Query(array(
+        'post_type' => 'career',
+        'post_status' => 'publish',
+        'meta_query' => array(
+          array(
+            'key' => 'career_validate_date',
+            'value' => $current_date,
+            'compare' => '>=',
+            'type' => 'DATE',
+          ),
+        ),
       ));
 
       if($careers -> have_posts()):

@@ -1,0 +1,133 @@
+@use "../../globals/global";
+
+.process-wrapper {
+	.section-title {
+		max-width: 784px;
+	}
+
+	.process-horizontal {
+		.ph-single {
+			gap: 16px;
+			h2 {
+				color: global.$primary;
+				font-family: global.$berlingske-serif-700;
+			}
+			h5 {
+				margin-bottom: 8px;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+				padding-bottom: 16px;
+				border-bottom: 1px solid global.$blackTransparent;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.process-wrapper {
+		.process-horizontal {
+			.ph-single {
+				&:not(:last-child) {
+					padding-bottom: 0;
+					margin-bottom: 0;
+					border: none;
+
+					p {
+						&::after {
+							right: -20px;
+							top: -12px;
+							height: 1px;
+							background-color: global.$primaryLight;
+						}
+					}
+				}
+
+				p {
+					position: relative;
+					&::after,
+					&::before {
+						content: "";
+						position: absolute;
+						left: 20px;
+					}
+
+					&::before {
+						top: -20px;
+						height: 16px;
+						width: 16px;
+						background: url(../images/checked-radio.svg) no-repeat
+							center/contain;
+					}
+				}
+				h5 {
+					padding-bottom: 20px;
+					margin-bottom: 20px;
+					position: relative;
+					z-index: 1;
+				}
+
+				h2,
+				h5,
+				p {
+					padding-left: 20px;
+					padding-right: 20px;
+				}
+
+				.ph-content {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}
+@media (min-width: 1200px) {
+	.process-wrapper {
+		.process-horizontal {
+			.ph-single {
+				h2,
+				h5,
+				p {
+					padding-left: 30px;
+					padding-right: 30px;
+				}
+
+				&:not(:last-child) {
+					p {
+						&::after {
+							right: -20px;
+							top: -12px;
+							height: 1px;
+							background-color: global.$primaryLight;
+						}
+					}
+				}
+
+				p {
+					position: relative;
+					&::after,
+					&::before {
+						content: "";
+						position: absolute;
+						left: 20px;
+					}
+
+					&::before {
+						top: -20px;
+					}
+				}
+
+				.ph-content {
+					height: 100%;
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}

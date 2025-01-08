@@ -74,26 +74,23 @@ h3 {
 	font-family: $berlingske-serif-600;
 }
 
+h5 {
+	font-size: 16px;
+	line-height: 19px;
+}
+
 p,
 a,
 span,
 small,
 strong {
-	line-height: 24px;
+	display: inline-block;
+	line-height: 19px;
 	margin: 0;
 
 	&.error {
 		color: $red !important;
 	}
-}
-
-a,
-span,
-small,
-strong {
-	line-height: 24px;
-	margin: 0;
-	display: inline-block;
 }
 
 a {

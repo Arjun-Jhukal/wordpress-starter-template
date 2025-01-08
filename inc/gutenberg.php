@@ -72,13 +72,13 @@ if(function_exists('acf_register_block_type')){
   ));
   
   acf_register_block_type(array(
-    'name'=>'title-description-on-left-list-on-right',
-    'title'=>'Title Description on Left and List on Right',
+    'name'=>'process-block',
+    'title'=>'Process',
     'description'=>__('A section that display title description on left and ordered list on the right.'),
     'render_template'=>__('template-parts/blocks/values.php'),
     'category'=>'widget',
     'icon'=>'images-alt2',
-    'keywords'=> array("Values","Steps","Title Description on Left and List on Right")
+    'keywords'=> array("Values","Steps","Ordered List with Title and Description","Custom Ordered List","Investment Process")
   ));
 
   acf_register_block_type(array(

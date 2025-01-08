@@ -9,6 +9,14 @@
 	.blog-single {
 		height: 100%;
 	}
+
+	p,
+	a,
+	span,
+	small,
+	strong {
+		line-height: 24px;
+	}
 }
 @media (min-width: 992px) {
 	.section-title {

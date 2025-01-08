@@ -65,9 +65,7 @@ $header_cta = get_field('header_cta', 'option');
     <section class="breadcrumb">
       <div class="container">
         <div class="breadcrumb-content">
-          <ul>
-            <li><a href="<?php echo home_url(); ?>">Home</a></li>
-          </ul>
+          <?php the_breadcrumb(); ?>
         </div>
       </div>
     </section>

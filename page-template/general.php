@@ -41,12 +41,12 @@ get_header();
                 ?>
                 </h3>
                 <?php
-              wp_nav_menu([
-                'theme-location'=>'quick-links',
-                'container'=>false,
-                'menu_class'=>''
-              ])
-              ?>
+                wp_nav_menu([
+                  'theme-location'=>'quick-links',
+                  'container'=>false,
+                  'menu_class'=>''
+                ])
+                ?>
               </div>
             </div>
           </aside>

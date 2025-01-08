@@ -13,6 +13,7 @@ $black: #1c1d1d;
 $blackTransparent: rgba(0, 0, 0, 0.1);
 $primaryLight: #6e8f15;
 $white: #fff;
+$white-400: rgba(255, 255, 255, 0.4);
 $body: #f2efe7;
 $description: #585c5c;
 $red: #ef0e24;
@@ -177,7 +178,7 @@ small,
 		top: 0;
 		left: 0;
 		right: 0;
-		background: linear-gradient(180deg, #fff 0%, #f2efe7 100%);
+		background: linear-gradient(180deg, #fff 85%, #f2efe7 100%);
 		height: clamp(250px, 55vh, 720px);
 		z-index: -1;
 	}
@@ -185,6 +186,10 @@ small,
 
 .bg-primary {
 	background-color: $primary !important;
+}
+
+.bg-white-400 {
+	background-color: $white-400;
 }
 
 .tpfl-btn {
@@ -477,11 +482,35 @@ input[type="submit"] {
 						top: 50%;
 						transform: translateY(-50%);
 					}
+
+					&:last-child {
+						opacity: 0;
+						transition: all 0.3s ease-in-out;
+					}
 				}
 			}
 
 			small {
 				color: $black;
+			}
+		}
+	}
+
+	&:hover {
+		.bs-content-wrapper {
+			.bs-content {
+				a {
+					color: $primaryLight;
+				}
+			}
+			.bs-info {
+				ul {
+					li {
+						&:last-child {
+							opacity: 1;
+						}
+					}
+				}
 			}
 		}
 	}

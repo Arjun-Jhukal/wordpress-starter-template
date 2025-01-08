@@ -29,26 +29,36 @@ $footer_tag_line= get_field('footer_tag_line','option');
       </div>
       <div class="col-6 col-lg-3 col-xl-2">
         <div class="footer-links">
-          <strong>Quick Links</strong>
+          <strong>
+            <?php
+                $menu_name = 'quick-links';
+                $menu = wp_get_nav_menu_object($menu_name);
+                echo $menu ? esc_html($menu->name) : 'Quick Links';
+                ?>
+          </strong>
           <?php
-          wp_nav_menu([
-            'theme-location'=>'quick-links',
-            'container'=>false,
-            'menu_class'=>''
-          ])
-          ?>
+            wp_nav_menu([
+              'theme_location'=>'quick-links',
+              'container'=>false,
+              'menu_class'=>''
+            ])
+            ?>
         </div>
       </div>
       <div class="col-6 col-lg-3 col-xl-2">
         <div class="footer-links">
-          <strong>Company</strong>
+          <strong><?php
+                $menu_name = 'company';
+                $menu = wp_get_nav_menu_object($menu_name);
+                echo $menu ? esc_html($menu->name) : 'Company';
+                ?></strong>
           <?php
-          wp_nav_menu([
-            'theme-location'=>'company',
-            'container'=>false,
-            'menu_class'=>''
-          ])
-          ?>
+              wp_nav_menu([
+              'theme_location'=>'company',
+              'container'=>false,
+              'menu_class'=>''
+            ])
+            ?>
         </div>
       </div>
       <?php if($socials):?>

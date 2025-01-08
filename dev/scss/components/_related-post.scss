@@ -1,0 +1,11 @@
+.related-post {
+	.row {
+		> div {
+			&:not(:last-child) {
+				.blog-single {
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}

@@ -35,12 +35,12 @@ $header_cta = get_field('header_cta', 'option');
           <?php endif;?>
           <div class="primary-menu-wrapper">
             <?php
-        wp_nav_menu([
-          'theme-location'=>'primary-menu',
-          'container'=>false,
-          'menu_class'=>'primary-menu d-md-flex justify-content-md-center align-items-md-center'
-        ]);
-        ?>
+              wp_nav_menu([
+                'theme_location'=>'primary-menu',
+                'container'=>false,
+                'menu_class'=>'primary-menu d-md-flex justify-content-md-center align-items-md-center'
+              ]);
+              ?>
 
           </div>
           <?php if($header_cta && $header_cta['url']):?>

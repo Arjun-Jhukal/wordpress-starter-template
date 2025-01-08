@@ -2,10 +2,12 @@
 
 @media (min-width: 768px) {
 	.key-highlights {
+		gap: 16px;
 		li {
-			flex: 0 0 calc(32% - 12px);
+			flex: unset;
 		}
 	}
+
 	.blog-single {
 		height: 100%;
 	}

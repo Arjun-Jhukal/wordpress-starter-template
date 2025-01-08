@@ -1,0 +1,67 @@
+@use "../../globals/global";
+.detail-featured {
+	h1 {
+		margin-bottom: 32px;
+	}
+	ul {
+		margin-bottom: 24px;
+		li {
+			img {
+				margin-right: 4px;
+			}
+		}
+	}
+
+	.df-image {
+		height: 448px;
+		border-radius: 8px;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.detail-featured {
+		h1 {
+			margin-bottom: 40px;
+		}
+		ul {
+			margin-bottom: 32px;
+			gap: 24px;
+			li {
+				&:not(:last-child) {
+					position: relative;
+
+					&::before {
+						content: "";
+						position: absolute;
+						right: -12px;
+						top: 0;
+						bottom: 0;
+						width: 1px;
+						background-color: global.$blackTransparent;
+					}
+				}
+			}
+		}
+	}
+}
+@media (min-width: 768px) {
+	.detail-featured {
+		ul {
+			gap: 40px;
+			li {
+				&:not(:last-child) {
+					&::before {
+						right: -20px;
+					}
+				}
+			}
+		}
+	}
+}

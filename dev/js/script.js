@@ -87,4 +87,47 @@ $(function () {
 			HandleTabContentActive(currentActive);
 		});
 	});
+
+	/** TOC  */
+	$(function () {
+		const observer = new IntersectionObserver(
+			function (entries) {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						$(".mobile-toc-controller").show();
+					} else {
+						$(".mobile-toc-controller").hide();
+					}
+				});
+			},
+			{
+				threshold: 0.1,
+			},
+		);
+
+		const blogs = document.querySelector(".blogs");
+		if (blogs) {
+			observer.observe(blogs);
+		}
+
+		const policySection = document.querySelector(".general-section");
+		if (policySection) {
+			observer.observe(policySection);
+		}
+
+		$(".mobile-toc-controller").on("click", function (e) {
+			e.preventDefault();
+			$(this).hide();
+			$(".blocks-wrapper").addClass("active");
+		});
+		$(document).on("click", function (e) {
+			if (
+				!$(e.target).closest(".blocks-wrapper").length &&
+				!$(e.target).closest(".mobile-toc-controller").length
+			) {
+				$(".blocks-wrapper").removeClass("active");
+				$(".mobile-toc-controller").show();
+			}
+		});
+	});
 });

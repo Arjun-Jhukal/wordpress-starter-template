@@ -4,14 +4,21 @@
 	.blocks-wrapper {
 		position: fixed;
 		top: 50%;
-		transform: translateY(-50%);
+		transform: translate(-100%, -50%);
 		left: 0;
 		max-height: 382px;
 		overflow: auto;
 		opacity: 0;
 		visibility: hidden;
-		transform: translateX(-100%);
 		transition: all 0.3s ease-in-out;
+		background-color: global.$white;
+		padding: 24px 12px;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+			transform: translate(0, -50%);
+		}
 	}
 
 	.ba-block {
@@ -99,6 +106,9 @@
 	.blog-aside {
 		position: sticky;
 		top: 50px;
+		max-width: calc(100% - 40px);
+		margin-left: auto;
+
 		.blocks-wrapper {
 			max-height: unset;
 			min-width: unset;
@@ -107,6 +117,8 @@
 			transform: translateX(0);
 			position: unset;
 			overflow: visible;
+			padding: 0;
+			background-color: transparent;
 		}
 		.ba-block {
 			padding: 32px;

@@ -95,7 +95,10 @@ if($show_career_list):
         <p>
           Subscribe to our news-letter to get update about future vacancy.
         </p>
-        <a href="#" class="tpfl-btn tpfl-btn-filled">Go Back to Home</a>
+
+        <div class="news-letter">
+          <?php echo do_shortcode('[contact-form-7 id="4bfdb33" title="News Letter"]');?>
+        </div>
       </div>
       <?php endif;?>
     </div>

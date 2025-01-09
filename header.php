@@ -13,6 +13,13 @@
     href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
     rel="stylesheet">
   <?php
+
+  $favicon_url = get_field('favicon','option');
+  if ($favicon_url): ?>
+  <link rel="icon" href="<?php echo esc_url($favicon_url); ?>" type="image/x-icon">
+  <link rel="shortcut icon" href="<?php echo esc_url($favicon_url); ?>" type="image/x-icon">
+  <?php endif; ?>
+  <?php
   wp_head();
   ?>
 </head>

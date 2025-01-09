@@ -1,0 +1,99 @@
+@use "../../globals/global";
+.mission-vision {
+	.mv-block {
+		.block-title {
+			margin-bottom: 20px;
+		}
+		ul {
+			padding-left: 24px;
+			li {
+				list-style-type: disc;
+				&:not(:last-child) {
+					margin-bottom: 12px;
+				}
+			}
+		}
+		p {
+			+ p,
+			+ ul {
+				margin-top: 12px;
+			}
+		}
+	}
+	.vision-block {
+		background-color: global.$primary;
+		position: relative;
+		padding: 60px 24px 40px;
+		margin-top: 32px;
+		z-index: 1;
+		li,
+		p,
+		h2,
+		h3,
+		span {
+			color: global.$white;
+		}
+
+		> img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			max-width: 32%;
+			z-index: -1;
+		}
+	}
+
+	+ .vision-element {
+		border-top: 1px solid global.$blackTransparent;
+		padding-top: 48px;
+	}
+}
+@media (min-width: 576px) {
+	.mission-vision {
+		.vision-block {
+			padding: 100px 40px 40px;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.mission-vision {
+		.mv-block {
+			.block-title {
+				margin-bottom: 28px;
+			}
+			ul {
+				padding-left: 30px;
+				li {
+					&:not(:last-child) {
+						margin-bottom: 16px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.mission-vision {
+		.mission-block {
+			max-width: 636px;
+		}
+		.vision-block {
+			margin-top: 0;
+			height: 100%;
+		}
+
+		+ .vision-element {
+			margin-top: 72px;
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.mission-vision {
+		+ .vision-element {
+			margin-top: 96px;
+		}
+	}
+}

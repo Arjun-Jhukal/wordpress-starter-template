@@ -1,0 +1,52 @@
+@use "../../globals/global";
+
+.vision-element {
+	.section-title {
+		max-width: 784px;
+	}
+
+	.ve-item {
+		background-color: global.$white;
+		padding: 24px;
+		border: 1px solid global.$blackTransparent;
+
+		.ve-icon {
+			max-width: 40px;
+		}
+
+		.ve-content {
+			h5 {
+				margin: 24px 0 8px;
+			}
+		}
+	}
+
+	.row {
+		> div {
+			&:not(:last-child) {
+				.ve-item {
+					margin-bottom: 16px;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.vision-element {
+		.ve-item {
+			height: 100%;
+		}
+
+		.row {
+			--bs-gutter-y: 16px;
+			> div {
+				&:not(:last-child) {
+					.ve-item {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+}

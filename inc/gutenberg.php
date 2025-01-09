@@ -55,7 +55,7 @@ if(function_exists('acf_register_block_type')){
     'name'=>'mission-vision',
     'title'=>'TPFL Mission Vision',
     'description'=>__('A First Block to show company mission and vision'),
-    'render_template'=>__('template-parts/blocks/mission-vision.php'),
+    'render_template'=>__('template-parts/blocks/about-us/mission-vision.php'),
     'category'=>'widget',
     'icon'=>'images-alt2',
     'keywords'=> array("Mission","Vision","Mission & Vision")
@@ -65,7 +65,7 @@ if(function_exists('acf_register_block_type')){
     'name'=>'vision-elements',
     'title'=>'TPFL Vision Elements',
     'description'=>__('A card layout with icon title and description'),
-    'render_template'=>__('template-parts/blocks/vision-element.php'),
+    'render_template'=>__('template-parts/blocks/about-us/vision-element.php'),
     'category'=>'widget',
     'icon'=>'images-alt2',
     'keywords'=> array("Vision Elements","Vision")

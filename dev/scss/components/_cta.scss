@@ -1,5 +1,19 @@
 .cta-block {
 	.cta-list {
 		gap: 8px;
+
+		a {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
+@media (min-width: 576px) {
+	.cta-block {
+		.cta-list {
+			a {
+				width: unset;
+			}
+		}
 	}
 }

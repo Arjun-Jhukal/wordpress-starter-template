@@ -18,7 +18,9 @@ function tpfl_scripts_enqueue(){
   wp_enqueue_script("Slick-JS","https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js", array(), "1.9.0", null);
 
     /** Custom JS */
-  wp_enqueue_script("custom-script", get_template_directory_uri() . "/assets/js/script.min.js", array(), "3.7.1", null);
+  wp_enqueue_script("custom-script", get_template_directory_uri() . "/assets/js/script.min.js", array(), "1.0.1", null);
+
+  wp_enqueue_script("custom-ajax", get_template_directory_uri() . "/assets/js/ajax.min.js", array(), "1.0.1", null);
 }
 
 add_action("wp_enqueue_scripts", "tpfl_scripts_enqueue");

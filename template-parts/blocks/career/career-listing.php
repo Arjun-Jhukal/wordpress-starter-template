@@ -17,7 +17,7 @@ if($show_career_list):
     </div>
     <div class="careers">
       <?php
-      $current_date = date('Y-m-d'); // Format the current date as 'YYYY-MM-DD'
+      $current_date = date('Y-m-d'); 
       $careers = new WP_Query(array(
         'post_type' => 'career',
         'post_status' => 'publish',
@@ -31,6 +31,7 @@ if($show_career_list):
         ),
       ));
 
+      
       if($careers -> have_posts()):
         while($careers -> have_posts()):$careers->the_post();
 
@@ -87,9 +88,20 @@ if($show_career_list):
             -></a>
         </div>
       </div>
-      <?php endwhile; endif;?>
+      <?php endwhile; ?>
+      <?php else:?>
+      <div class="empty-block text-center">
+        <h3>We are not Hiring right now !</h3>
+        <p>
+          Subscribe to our news-letter to get update about future vacancy.
+        </p>
+        <a href="#" class="niif-btn niff-btn-filled">Go Back to Home</a>
+      </div>
+      <?php endif;?>
     </div>
   </div>
 </section>
+
+
 
 <?php endif;?>

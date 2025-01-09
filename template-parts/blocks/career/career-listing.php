@@ -17,15 +17,16 @@ if($show_career_list):
     </div>
     <div class="careers">
       <?php
-     $careers = new WP_Query(array(
+      $current_date = date('Y-m-d'); // Format the current date as 'YYYY-MM-DD'
+      $careers = new WP_Query(array(
         'post_type' => 'career',
         'post_status' => 'publish',
         'meta_query' => array(
           array(
             'key' => 'career_validate_date',
             'value' => $current_date,
-            'compare' => '>=',
-            'type' => 'DATE',
+            'compare' => '>=', // Fetch posts with validate_date >= current date
+            'type' => 'DATE', // Ensure the meta value is treated as a DATE
           ),
         ),
       ));

@@ -84,6 +84,7 @@
 					}
 				}
 				&:last-child {
+					border-bottom: 1px solid global.$blackTransparent;
 					td {
 						&:first-child {
 							border-radius: 0 0 0 8px;

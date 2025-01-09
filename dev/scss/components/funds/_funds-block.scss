@@ -1,0 +1,77 @@
+@use "../../globals/global";
+.funds {
+	.section-title {
+		margin-bottom: 24px;
+		h1 {
+			margin-bottom: 0;
+		}
+		p {
+			strong {
+				color: global.$black;
+				font-weight: 500;
+			}
+
+			span {
+				padding: 4px 16px;
+				border-radius: 4px;
+				font-weight: 600;
+
+				&.closed {
+					color: global.$red;
+					background-color: global.$red-100;
+				}
+				&.open {
+					color: global.$white;
+					background-color: global.$primary-100;
+				}
+			}
+		}
+	}
+
+	.funds-content {
+		figure {
+			&:has(table) {
+				margin-top: 0;
+			}
+		}
+		table {
+			margin-top: 32px;
+		}
+
+		.content-box {
+			max-width: calc(100% - 32px);
+		}
+	}
+
+	.image-wrapper {
+		gap: 24px;
+		.image {
+			height: 212px;
+			border-radius: 8px;
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.funds {
+		.image-wrapper {
+			height: 100%;
+			.image {
+				&.featured {
+					min-height: calc(100% - 212px - 32px);
+				}
+			}
+		}
+	}
+}

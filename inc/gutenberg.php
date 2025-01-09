@@ -150,4 +150,14 @@ if(function_exists('acf_register_block_type')){
     'icon'=>'images-alt2',
     'keywords'=> array("TPFL Career Listing","Career", "Listing")
   ));
+  
+  // acf_register_block_type(array(
+  //   'name'=>'funds-content-box',
+  //   'title'=>'Funds Block',
+  //   'description'=>__('A Block to display funds detail alongside the status of fund.'),
+  //   'render_template'=>__('template-parts/blocks/funds/funds.php'),
+  //   'category'=>'widget',
+  //   'icon'=>'images-alt2',
+  //   'keywords'=> array("TPFL Funds","Funds")
+  // ));
 }

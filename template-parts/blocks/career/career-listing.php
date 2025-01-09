@@ -95,7 +95,7 @@ if($show_career_list):
         <p>
           Subscribe to our news-letter to get update about future vacancy.
         </p>
-        <a href="#" class="niif-btn niif-btn-filled">Go Back to Home</a>
+        <a href="#" class="tpfl-btn tpfl-btn-filled">Go Back to Home</a>
       </div>
       <?php endif;?>
     </div>

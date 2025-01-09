@@ -90,12 +90,12 @@ if($show_career_list):
       </div>
       <?php endwhile; ?>
       <?php else:?>
-      <div class="empty-block text-center">
+      <div class="empty-block text-center section-padding-y bg-light">
         <h3>We are not Hiring right now !</h3>
         <p>
           Subscribe to our news-letter to get update about future vacancy.
         </p>
-        <a href="#" class="niif-btn niff-btn-filled">Go Back to Home</a>
+        <a href="#" class="niif-btn niif-btn-filled">Go Back to Home</a>
       </div>
       <?php endif;?>
     </div>

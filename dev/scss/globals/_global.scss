@@ -87,13 +87,18 @@ a,
 span,
 small,
 strong {
-	display: inline-block;
 	line-height: 19px;
 	margin: 0;
 
 	&.error {
 		color: $red !important;
 	}
+}
+a,
+span,
+small,
+strong {
+	display: inline-block;
 }
 
 a {

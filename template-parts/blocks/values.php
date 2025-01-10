@@ -62,7 +62,7 @@ $all_process=get_field('process_list_items');
       <div class="process-wrapper">
         <div class="process-horizontal d-lg-flex">
           <?php foreach($all_process as $index => $process):?>
-          <div class="ph-single d-flex justify-content-start align-items-center flex-lg-column">
+          <div class="ph-single d-flex justify-content-start align-items-center d-lg-block">
             <?php 
             $title=$process['single_process_title'];
             $detail=$process['single_process_detail'];

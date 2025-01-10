@@ -4,9 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WE WIN, WHEN WE ALL WIN | TPFL</title>
-  <meta name="description"
-    content="Welcome to Team Partners Fund Limited (TPFL), where innovation meets investment and potential transforms into success.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link

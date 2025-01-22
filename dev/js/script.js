@@ -213,7 +213,7 @@ $(function () {
 		);
 
 		document.addEventListener(
-			"wpcf7success",
+			"wpcf7mailsent",
 			function (event) {
 				setTimeout(function () {
 					const responseOutput = event.target.querySelector(

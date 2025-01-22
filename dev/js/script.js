@@ -181,4 +181,60 @@ $(function () {
 			});
 		});
 	});
+
+	/**CONTACT FORM ERROR AND SUCCESS */
+	$(function () {
+		const ToastController = ({ message, variant }) => {
+			var toast = $(".tpfl-toast");
+
+			console.log("toggle toast");
+			toast.find("p").text(message);
+			toast.addClass(variant).addClass("active");
+
+			setTimeout(() => {
+				toast.removeClass("active").removeClass("error").removeClass("success");
+			}, 2000);
+		};
+		document.addEventListener(
+			"wpcf7invalid",
+			function (event) {
+				setTimeout(function () {
+					const responseOutput = event.target.querySelector(
+						".wpcf7-response-output",
+					).innerText;
+
+					ToastController({
+						message: responseOutput,
+						variant: "error",
+					});
+				}, 0);
+			},
+			false,
+		);
+
+		document.addEventListener(
+			"wpcf7success",
+			function (event) {
+				setTimeout(function () {
+					const responseOutput = event.target.querySelector(
+						".wpcf7-response-output",
+					).innerText;
+
+					ToastController({
+						message: responseOutput,
+						variant: "success",
+					});
+				}, 0);
+			},
+			false,
+		);
+
+		$(".btn-close-toast").on("click", function (e) {
+			e.preventDefault();
+			$(".tpfl-toast")
+				.removeClass("active")
+				.removeClass("error")
+				.removeClass("success");
+		});
+	});
 });

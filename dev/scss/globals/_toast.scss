@@ -1,0 +1,40 @@
+@use "../globals/global";
+
+.tpfl-toast {
+	position: fixed;
+	right: 16px;
+	bottom: 16px;
+	background-color: global.$white;
+	border-radius: 8px;
+	min-width: 200px;
+	max-width: 300px;
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(100%);
+	transition: all 0.3s ease-in-out;
+
+	&.active {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+
+	.toast-content {
+		padding: 16px 12px;
+
+		button {
+			max-width: 12px;
+
+			svg {
+				max-width: 100%;
+			}
+		}
+	}
+
+	&.error {
+		border-left: 5px solid global.$red;
+	}
+	&.success {
+		border-left: 5px solid global.$primary;
+	}
+}

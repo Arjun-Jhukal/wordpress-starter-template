@@ -4,6 +4,7 @@ $section_title=get_field('process_title');
 $brief=get_field('process_brief');
 $all_process=get_field('process_list_items');
 
+// Ok tested
 ?>
 <section class="values section-padding-y <?php echo (!($layout) ?"bg-shape":"")?>">
   <img src="<?php echo get_parent_theme_file_uri();?>/assets/images/t-shape.png" alt="" class='img-fluid d-none'>

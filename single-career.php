@@ -91,7 +91,8 @@ get_header();
           </li>
           <?php endif;?>
         </ul>
-        <a href="#" class="tpfl-btn tpfl-btn-filled d-block text-center d-lg-inline-block">Apply Now -></a>
+        <a href="#apply-for-career" class="tpfl-btn tpfl-btn-filled d-block text-center d-lg-inline-block">Apply Now
+          -></a>
       </div>
       <?php if (has_post_thumbnail()): ?>
       <div class="featured-image">
@@ -106,9 +107,8 @@ get_header();
     <div class="dc-content-box">
       <?php the_content();?>
     </div>
-    <div class="contact-form-wrapper">
+    <div class="contact-form-wrapper" id="apply-for-career">
       <?php echo do_shortcode('[contact-form-7 id="9c3f845" title="Application Form"]'); ?>
-
     </div>
   </div>
 </section>

@@ -5,7 +5,7 @@ $brief=get_field('process_brief');
 $all_process=get_field('process_list_items');
 
 ?>
-<section class="values section-gap <?php echo (!($layout) ?"bg-shape":"")?>">
+<section class="values section-padding-y <?php echo (!($layout) ?"bg-shape":"")?>">
   <img src="<?php echo get_parent_theme_file_uri();?>/assets/images/t-shape.png" alt="" class='img-fluid d-none'>
   <div class="container">
     <?php if(!$layout):?>

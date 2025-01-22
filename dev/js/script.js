@@ -130,4 +130,55 @@ $(function () {
 			}
 		});
 	});
+
+	/** APPLICATION FORM FILE UPLOADED VIEW */
+	$(function () {
+		$('input[type="file"]').each(function () {
+			const inputContainer = $(this).closest(".file-uploader");
+			var fileUploadedView = $(this)
+				.parents(".input-field")
+				.find(".file-uploaded-view");
+
+			function RemoveFileAndActivateFileUploader() {
+				fileUploadedView.hide();
+				fileUploadedView.removeClass("d-flex");
+				inputContainer.show();
+			}
+
+			$(this).on("change", function (e) {
+				const file = e.target.files[0];
+				const fileName = file.name;
+				const fileType = file.type.split("/");
+
+				fileUploadedView.find("strong").text(fileName);
+				fileUploadedView
+					.find("span")
+					.text(
+						`${fileType[fileType.length - 1]} | ${(
+							file.size /
+							(1024 * 1024)
+						).toFixed(2)} MB`,
+					);
+
+				if (file) {
+					fileUploadedView.removeClass("d-none");
+					fileUploadedView.addClass("d-flex");
+					inputContainer.hide();
+				} else {
+					RemoveFileAndActivateFileUploader();
+				}
+				console.log(file);
+			});
+
+			const removeBtn = fileUploadedView.find(".remove-selected-file");
+
+			removeBtn.on("click", function (e) {
+				e.preventDefault();
+				inputContainer.find(`input[type="file"]`).val("");
+				fileUploadedView.find("strong").text("");
+				fileUploadedView.find("span").text(``);
+				RemoveFileAndActivateFileUploader();
+			});
+		});
+	});
 });

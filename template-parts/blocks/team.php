@@ -96,26 +96,27 @@ $showTeam=get_field('enable_team');
                          $facebook=$socials['facebook']; 
                          $linkedin=$socials['linkedin']; 
                          $twitter=$socials['twitter']; 
+                        
                           ?>
                     <div class="socials">
                       <ul class="d-flex">
                         <?php if($facebook):?>
                         <li>
-                          <a href="<?php esc_url($facebook);?>">
+                          <a target="_blank" href="<?php echo esc_url($facebook);?>">
                             <img src="<?php echo get_parent_theme_file_uri()?>/assets/images/facebook.svg" alt="">
                           </a>
                         </li>
                         <?php endif;?>
                         <?php if($linkedin):?>
                         <li>
-                          <a href="<?php esc_url($linkedin);?>">
+                          <a target="_blank" href="<?php echo esc_url($linkedin);?>">
                             <img src="<?php echo get_parent_theme_file_uri()?>/assets/images/linkedin.svg" alt="">
                           </a>
                         </li>
                         <?php endif;?>
                         <?php if($twitter):?>
                         <li>
-                          <a href="<?php esc_url($twitter);?>">
+                          <a target="_blank" href="<?php echo esc_url($twitter);?>">
                             <img src="<?php echo get_parent_theme_file_uri()?>/assets/images/x.svg" alt="">
                           </a>
                         </li>

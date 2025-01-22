@@ -1,6 +1,11 @@
 .breadcrumb {
 	padding: 48px 0 16px;
 	margin-bottom: 0;
+
+	.breadcrumbs,
+	a {
+		font-weight: 600;
+	}
 }
 
 @media (min-width: 992px) {

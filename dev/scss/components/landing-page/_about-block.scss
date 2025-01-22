@@ -1,4 +1,11 @@
+@use "../../globals/global";
+
 .about-block {
+	.section-title {
+		h2 {
+			font-family: global.$berlingske-serif-400;
+		}
+	}
 	.ab-content {
 		p,
 		ul {

@@ -8,11 +8,9 @@ function the_breadcrumb() {
     $sep = ' / '; // Separator
     echo '<div class="breadcrumbs"><a href="' . home_url() . '">Home</a>' . $sep;
 
-    if (is_category()) {
-        // Display category name
+    if (is_category()) {   
         single_cat_title();
     } elseif (is_single()) {
-        // Display category and post title for single posts
         $categories = get_the_category();
         if ($categories) {
             $first_category = $categories[0];
@@ -20,13 +18,11 @@ function the_breadcrumb() {
         }
         the_title();
     } elseif (is_page() && !is_front_page()) {
-        // Display static page title
+       
         the_title();
     } elseif (is_archive()) {
-        // Display archive title (year, month, day, etc.)
         the_archive_title();
     } elseif (is_home()) {
-        // Display posts page title
         echo get_the_title(get_option('page_for_posts'));
     }
 

@@ -2,6 +2,9 @@
 
 .page-banner {
 	position: relative;
+	display: flex;
+	align-items: center;
+	height: 80vh;
 
 	&::before {
 		content: "";
@@ -31,9 +34,20 @@
 		h1 {
 			max-width: 632px;
 			margin: 0 auto 20px;
+			font-family: global.$berlingske-serif-300;
+
+			span {
+				font-family: global.$berlingske-serif-700-italic;
+			}
 		}
 		p + a {
 			margin-top: 28px;
 		}
+	}
+}
+
+@media (min-width: 992px) {
+	.page-banner {
+		height: 600px;
 	}
 }

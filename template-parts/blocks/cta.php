@@ -3,7 +3,7 @@ $title=get_field("cta_title");
 $cta_list=get_field("ctas");
 ?>
 
-<section class="cta-block section-gap">
+<section class="cta-block section-padding-y">
   <div class="container">
     <div class="row justify-content-between">
       <div class="col-lg-6">

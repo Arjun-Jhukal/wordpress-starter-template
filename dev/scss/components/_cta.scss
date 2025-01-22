@@ -1,4 +1,6 @@
+@use "../globals/global";
 .cta-block {
+	border-top: 1px solid global.$blackTransparent;
 	.cta-list {
 		gap: 8px;
 
@@ -14,6 +16,14 @@
 			a {
 				width: unset;
 			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.cta-block {
+		&.section-padding-y {
+			padding: 72px 0;
 		}
 	}
 }

@@ -42,7 +42,7 @@ $header_cta = get_field('header_cta', 'option');
               wp_nav_menu([
                 'theme_location'=>'primary-menu',
                 'container'=>false,
-                'menu_class'=>'primary-menu d-md-flex justify-content-md-center align-items-md-center'
+                'menu_class'=>'primary-menu d-lg-flex justify-content-md-center align-items-md-center'
               ]);
               ?>
           </div>

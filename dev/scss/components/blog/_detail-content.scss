@@ -99,6 +99,22 @@
 	}
 	.social-share {
 		margin-top: 40px;
+		.heateor_sss_sharing_ul {
+			display: flex;
+			gap: 8px;
+
+			a {
+				&:hover {
+					background-color: global.$primary !important;
+
+					svg {
+						path {
+							fill: global.$white;
+						}
+					}
+				}
+			}
+		}
 	}
 	.next-prev-wrapper {
 		margin-top: 32px;
@@ -115,7 +131,7 @@
 				height: 14px;
 				position: absolute;
 				background: url(../images/angle-right.svg) no-repeat center/contain;
-				top: 8px;
+				top: 4px;
 			}
 
 			&:hover {
@@ -148,7 +164,6 @@
 			font-family: global.$berlingske-serif-600;
 			color: global.$black;
 			display: block;
-			margin-bottom: 8px;
 		}
 	}
 }
@@ -186,6 +201,17 @@
 			span {
 				font-size: 22px;
 				line-height: 28px;
+			}
+		}
+
+		.next-prev-wrapper {
+			a {
+				&::before {
+					top: 8px;
+				}
+				span {
+					margin-bottom: 8px;
+				}
 			}
 		}
 	}

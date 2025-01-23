@@ -72,7 +72,7 @@ $(function () {
 			loadTextBtn.off("click").on("click", function (e) {
 				e.preventDefault();
 				$(this).toggleClass("show-less");
-				textContainer.toggleClass("expandable");
+				$(this).siblings(".text-read-more").toggleClass("expandable");
 
 				let originalText = $(this).data("original-text") || $(this).text();
 				$(this).data("original-text", originalText);

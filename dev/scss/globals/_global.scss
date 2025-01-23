@@ -230,6 +230,24 @@ small,
 	text-underline-offset: 2px;
 }
 
+.tpfl-load-more {
+	position: relative;
+	padding-right: 24px;
+
+	&::after {
+		content: "->";
+		position: absolute;
+		right: 0;
+		top: 50%;
+		transform: translateY(-50%) rotate(90deg);
+		transition: all 0.2s linear;
+	}
+
+	&.show-less::after {
+		transform: translateY(-50%) rotate(-90deg);
+	}
+}
+
 input[type="submit"] {
 	border-radius: 4px;
 	padding: 12px 36px;

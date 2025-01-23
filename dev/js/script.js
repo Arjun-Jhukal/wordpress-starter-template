@@ -52,12 +52,40 @@ $(function () {
 		],
 	});
 
+	/**TPFL TAB */
 	$(function () {
+		function checkExpandableContent(tabContent) {
+			var textContainer = tabContent.find(".text-read-more");
+			var loadTextBtn = tabContent.find(".tpfl-load-more");
+
+			if (textContainer.length) {
+				var lineHeight = parseFloat(textContainer.find("p").css("line-height"));
+				var totalHeight = textContainer[0].scrollHeight;
+				var lineCount = Math.round(totalHeight / lineHeight);
+
+				if (lineCount > 7) {
+					textContainer.addClass("expandable");
+					loadTextBtn.addClass("d-inline-block");
+				}
+			}
+
+			loadTextBtn.off("click").on("click", function (e) {
+				e.preventDefault();
+				$(this).toggleClass("show-less");
+				textContainer.toggleClass("expandable");
+
+				let originalText = $(this).data("original-text") || $(this).text();
+				$(this).data("original-text", originalText);
+				$(this).text(
+					$(this).hasClass("show-less") ? "Show Less" : originalText,
+				);
+			});
+		}
+
 		function HandleTabContentActive(currentActive) {
-			$(`.tab-content#${currentActive}`)
-				.addClass("active")
-				.siblings()
-				.removeClass("active");
+			var activeTab = $(`.tab-content#${currentActive}`);
+			activeTab.addClass("active").siblings().removeClass("active");
+			checkExpandableContent(activeTab);
 
 			$(".it-image").each(function () {
 				if (currentActive === $(this).data("index")) {
@@ -66,26 +94,20 @@ $(function () {
 			});
 		}
 
-		$(".tab-controller ul li a").each(function () {
-			$(this).on("click", function (e) {
-				e.preventDefault();
-				var currentActive = $(this).data("target");
-				console.log(currentActive);
+		$(".tab-controller ul li a").on("click", function (e) {
+			e.preventDefault();
+			var currentActive = $(this).data("target");
 
-				$(this)
-					.parent("li")
-					.addClass("active")
-					.siblings()
-					.removeClass("active");
-
-				HandleTabContentActive(currentActive);
-			});
-		});
-		$(".tab-controller select").on("change", function (e) {
-			var currentActive = $(this).val();
-
+			$(this).parent("li").addClass("active").siblings().removeClass("active");
 			HandleTabContentActive(currentActive);
 		});
+
+		$(".tab-controller select").on("change", function () {
+			HandleTabContentActive($(this).val());
+		});
+
+		// Initialize for the first active tab
+		checkExpandableContent($(".tab-content.active"));
 	});
 
 	/** TOC  */
@@ -167,7 +189,6 @@ $(function () {
 				} else {
 					RemoveFileAndActivateFileUploader();
 				}
-				console.log(file);
 			});
 
 			const removeBtn = fileUploadedView.find(".remove-selected-file");
@@ -187,7 +208,6 @@ $(function () {
 		const ToastController = ({ message, variant }) => {
 			var toast = $(".tpfl-toast");
 
-			console.log("toggle toast");
 			toast.find("p").text(message);
 			toast.addClass(variant).addClass("active");
 
@@ -237,4 +257,35 @@ $(function () {
 				.removeClass("success");
 		});
 	});
+
+	/** CLIENT READ MORE FUNCTIONALITY */
+	// $(function () {
+	// 	$(".tab-content.active").each(function () {
+	// 		var textContainer = $(this).find(".text-read-more");
+	// 		var loadTextBtn = $(this).find(".tpfl-load-more");
+
+	// 		if (textContainer.length) {
+	// 			var lineHeight = parseFloat(textContainer.find("p").css("line-height"));
+	// 			var totalHeight = textContainer[0].scrollHeight;
+	// 			var lineCount = Math.round(totalHeight / lineHeight);
+
+	// 			if (lineCount > 7) {
+	// 				textContainer.addClass("expandable");
+	// 				loadTextBtn.addClass("d-inline-block");
+	// 			}
+	// 		}
+
+	// 		loadTextBtn.on("click", function (e) {
+	// 			e.preventDefault();
+	// 			$(this).toggleClass("show-less");
+	// 			textContainer.toggleClass("expandable");
+
+	// 			let originalText = $(this).data("original-text") || $(this).text();
+	// 			$(this).data("original-text", originalText);
+	// 			$(this).text(
+	// 				$(this).hasClass("show-less") ? "Show Less" : originalText,
+	// 			);
+	// 		});
+	// 	});
+	// });
 });

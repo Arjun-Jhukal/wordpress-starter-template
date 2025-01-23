@@ -66,7 +66,7 @@ $showTeam=get_field('enable_team');
               <?php if (has_post_thumbnail()): ?>
               <img src="<?php echo the_post_thumbnail_url('large'); ?>" alt="<?php echo $name; ?>" class="img-fluid">
               <?php else: ?>
-              <img src="<?php echo get_parent_theme_file_uri() ?>/assets/images/placeholder-02.png" alt="Placeholder"
+              <img src="<?php echo get_parent_theme_file_uri() ?>/assets/images/no-profile.webp" alt="Placeholder"
                 class="img-fluid">
               <?php endif; ?>
             </div>
@@ -78,8 +78,8 @@ $showTeam=get_field('enable_team');
                     <img src="<?php echo the_post_thumbnail_url('large'); ?>" alt="<?php echo $name; ?>"
                       class="img-fluid">
                     <?php else: ?>
-                    <img src="<?php echo get_parent_theme_file_uri() ?>/assets/images/placeholder-02.png"
-                      alt="Placeholder" class="img-fluid">
+                    <img src="<?php echo get_parent_theme_file_uri() ?>/assets/images/no-profile.webp" alt="Placeholder"
+                      class="img-fluid">
                     <?php endif; ?>
                   </div>
                   <div class="info d-lg-flex justify-content-between">
@@ -128,9 +128,12 @@ $showTeam=get_field('enable_team');
                 </div>
               </div>
               <div class="content-box">
-                <?php if($detail):
-                  echo $detail;
-                endif;?>
+                <?php if($detail): ?>
+                <div class="text-read-more">
+                  <?php  echo $detail; ?>
+                </div>
+                <?php   endif;?>
+                <a href="#" class="tpfl-btn-underlined tpfl-btn-text tpfl-load-more">Load More</a>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 @use "../globals/global";
+@use "../mixins/mixins" as mixins;
 
 .team-member {
 	border-radius: 8px;
@@ -52,6 +53,34 @@
 	.tm-content {
 		p {
 			color: global.$black;
+
+			+ p {
+				margin-top: 12px;
+			}
+		}
+
+		a {
+			margin-top: 12px;
+			display: none;
+		}
+
+		.text-read-more {
+			max-height: 205px;
+			overflow: auto;
+
+			&.expandable {
+				p {
+					display: -webkit-box;
+					overflow: hidden;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 7;
+
+					&:not(:first-child) {
+						display: none;
+					}
+				}
+			}
+			@include mixins.custom-scrollbar;
 		}
 	}
 

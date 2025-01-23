@@ -1,0 +1,21 @@
+@use "../globals/global";
+@mixin custom-scrollbar(
+	$width: 5px,
+	$thumb-radius: 5px,
+	$thumb-color: global.$primary,
+	$track-color: global.$white-400
+) {
+	&::-webkit-scrollbar {
+		width: $width;
+		height: $width;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: $thumb-color;
+		border-radius: $thumb-radius;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: $track-color;
+	}
+}
